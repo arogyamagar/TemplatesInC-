@@ -1,0 +1,41 @@
+#include<iostream>
+#include<iomanip>
+using namespace std;
+template <class S>
+void bubble (S a[],int n)
+{
+   int i,j;
+   for(i=0;i<n-1;i++)
+      for(j=0;j<n-i-1;j++)
+      if(a[j]>a[j+1])
+      {
+    swap(a[j],a[j+1]);
+      }
+}
+template<class T>
+void swap(T &x,T &y)
+{
+  T temp;
+  temp=x;
+  x=y;
+  y=temp;
+}
+int main()
+{
+   int i,j,a[100],n;
+   cout<<"Enter number to be sort"<<endl;
+   cin>>n;
+    cout<<"Enter the number in an array (Enter integer value)\n";
+   for (int i=0;i<n;i++)
+   {
+   		cin>>a[i];
+   }
+	cout<<"\nOriginal Integer Array a:";
+   for(i=0;i<n;i++)
+   cout<<a[i]<<" ";
+   bubble(a,n);
+   cout<<"\n\nSorted integer array a:";
+   for(i=0;i<n;i++)
+   cout<<a[i]<<" ";
+   return 0;
+}
